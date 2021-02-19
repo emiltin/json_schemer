@@ -49,7 +49,7 @@ module JSONSchemer
       when String
         schema = JSON.parse(schema)
       when Pathname
-        uri = URI.parse("file://#{schema.realpath}")
+        uri = URI.parse("file:///#{schema.realpath}")
         if options.key?(:ref_resolver)
           schema = FILE_URI_REF_RESOLVER.call(uri)
         else
